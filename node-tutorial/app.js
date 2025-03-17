@@ -1,9 +1,8 @@
-// CommonJS, every file is module (by default)
-// Modules - Encapsulated Code (only share minimum)
+const http = require("http");
 
-const names = require("./4-names");
-const sayHi = require("./5-utils");
+const server = http.createServer((req, res) => {
+  res.write("Welcome to our homepage");
+  res.end();
+});
 
-sayHi("Mayowa");
-sayHi(names.john);
-sayHi(names.peter);
+server.listen(8000);
